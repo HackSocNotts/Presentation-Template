@@ -4,11 +4,11 @@
 \usepackage{hacksoc}
 
 % use pausefn command so you can generate slides with and without pauses
-\newcommand{\pausefn}{\pause}
-%\newcommand{\pausefn}{}
+%\newcommand{\pausefn}{\pause}
+\newcommand{\pausefn}{}
 
-\title{Sample Presentation}
-\subtitle{How to use this \LaTeX{ } template}
+\title{Docker}
+\subtitle{What it is, and Why it Should Be Your Friend}
 \author{Peter Taylor}
 \date{\today}
 
@@ -18,23 +18,31 @@
 
 % Section Names have their own slides generated, make sure they are out of a frame
 % environment. If you want it numbered, include it in the name of the section
-\section{Part IV: Sample Section Title}
+\section{Part I: The Olden Days}
 \begin{frame}
+  \frametitle{LAMP Stack\footnote{LEMP stack also existed, nginx in place of apache}}
 
-  \frametitle{Usage}
-  Say you wanted to have a footnote\footnote{like this}\footsep\footnote{or this\footnote{Unfortunately, nested footnotes don't work}}, you use \texttt{footnote}, and to separate them use \texttt{footsep}\par
-
-  \epigraph{If you want a nicely formatted quote like this one, use the \texttt{epigraph} environment. However, footnotes don't play nicely with this. Stylistically, I'd put all epigraphs at the end, but you don't have to}{And this is who said it, and when}
-
-  Pretty Much everything else is as expected.
+  \begin{itemize}
+    \pausefn\item Most servers would have used Linux, Apache, MySQL, PHP
+    \pausefn\item Installed as system packages
+    \pausefn\item On distros like Ubuntu, you don't get updated packages, opposite with Arch
+    \pausefn\item Difficult to pin the system to, say Python 3.5
+    \pausefn\item You'd have to add the rewrite rules to your Apache config (God help you if your guide was written for nginx)
+  \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Some Maths}
-  \framesubtitle{Have some lambda calculus}
-  The maths is set to use the maths that would be used in an article, as that is simply more readable than what beamer sets it to.
-  $$\int Y = \lambda f. (\lambda x. f (x x)) (\lambda x. f (x x))$$
+  \frametitle{What that meant for your average Sysadmin}
 
+  \begin{itemize}
+    \pausefn\item Installation for open-source packages are a pain (like prestashop)
+    \pausefn\item Server Migration was slow.
+    \pausefn\item Making services run on boot wasn't easy, especially:
+    \begin{itemize}
+      \item If the server program isn't something straightforward (like PHP) you'll probably have to write your own scripts
+      \item Before the widespread adoption of systemd
+    \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \end{document}
